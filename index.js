@@ -14,6 +14,7 @@ function createPost() {
   var commentsTemplateFn = _.template(commentsTemplate);
 
   var main = document.getElementsByTagName("main")[0];
+  main.innerHTML += pageTemplateFn();
   var templateHTML = templateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
   postDiv.innerHTML += templateHTML;
 }
