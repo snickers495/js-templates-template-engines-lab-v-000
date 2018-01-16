@@ -1,33 +1,43 @@
 function createPost() {
-  ////Blog Values///
-    var postTitle = document.getElementById("postTitle").value;
-    var postAuthor = document.getElementById("postAuthor").value
-    var postText = document.getElementById("postText").value;
+  // templates
+  const commentsTemplate = document.getElementById("comments-template").innerHTML;
+  const commentsTemplateFn = _.template(commentsTemplate);
 
-    ////Template/////
-    var postTemplate = document.getElementById("post-template").innerHTML;
-    var postTemplateFn = _.template(postTemplate);
-    var pageTemplate = document.getElementById("page-template").innerHTML;
-    var pageTemplateFn = _.template(pageTemplate);
-    var commentsTemplate = document.getElementById("comments-template").innerHTML;
-    var commentsTemplateFn = _.template(commentsTemplate);
+  const pageTemplate = document.getElementById("page-template").innerHTML;
+  const pageTemplateFn = _.template(pageTemplate);
 
-    var main = document.getElementsByTagName("main")[0];
-    main.innerHTML += pageTemplateFn();
-    var postTemplateHTML = postTemplateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
-    var postDiv = postDiv = document.getElementById("post");
-    postDiv.innerHTML += postTemplateHTML;
-    var postFooter = document.querySelector('footer');
-    postFooter.innerHTML = commentsTemplateFn();
+  const postTemplate = document.getElementById("post-template").innerHTML;
+  const postTemplateFn = _.template(postTemplate);
+
+  // the blog post values
+  const title = document.getElementById("postTitle").value;
+  const body = document.getElementById("postBody").value;
+  const author = document.getElementById("postAuthor").value;
+
+  const main = document.getElementsByTagName('main')[0];
+  main.innerHTML += pageTemplateFn();
+
+  const templateHTML = postTemplateFn({ 'title': title, 'body': body, 'author': author });
+
+  const postDiv = document.getElementById("post");
+
+  postDiv.innerHTML = templateHTML;
+
+  const postFooter = document.querySelector('footer');
+  postFooter.innerHTML = commentsTemplateFn();
 }
 
 function postComment() {
-  var commenter = document.getElementById("commenterName").value;
-  var comment = document.getElementById("commenterText").value;
 
-  var commentTemplate = document.getElementById("comment-template").innerHTML;
-  var commentTemplateFn = _.template(commentTemplate);
-  var commentHTML = commentTemplateFn({ 'commenterName': commenter, 'commenterText': comment });
-  var commentsDiv = document.getElementById("comments-template");
-  commentsDiv.innerHTML += commentHTML;
+  const commenter = document.getElementById("commenterName").value;
+  const comment = document.getElementById("commentText").value;
+  // template
+  const commentTemplate = document.getElementById("comment-template").innerHTML;
+  //create template function
+  const templateFn = _.template(commentTemplate);
+  const templateHTML = templateFn({ 'comment': comment, 'commenter': commenter });
+
+  const commentsDiv = document.getElementById("comments-template");
+
+  commentsDiv.innerHTML += templateHTML;
 }
