@@ -13,7 +13,7 @@ function createPost() {
   var commentsTemplate = document.getElementById("comments-template").innerHTML;
   var commentsTemplateFn = _.template(commentsTemplate);
 
-  var postDiv = document.getElementById("post");
+  var main = document.getElementById("post");
   var templateHTML = templateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
   postDiv.innerHTML += templateHTML;
 }
