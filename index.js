@@ -4,5 +4,5 @@ function createPost(){
   var postText = document.getElementById("postText").value;
   var postTemplate = document.getElementById("post-template").innerHTML
   var templateFn = _.template(postTemplate)
-  var postsDiv = document.getElementById("post")
+  var postDiv = document.getElementById("post")
 }
