@@ -22,5 +22,12 @@ function createPost() {
 }
 
 function postComment() {
+  var commenter = document.getElementById("commenterName").value;
+  var comment = document.getElementById("commenterText").value;
 
+  var commentTemplate = document.getElementById("comment-template").innerHTML;
+  var commentTemplateFn = _.template(commentTemplate);
+  var commentHTML = commentTemplateFn({ 'commenterName': commenter, 'commenterText': comment });
+  var commentsDiv = document.getElementById("comments-template");
+  commentsDiv.innerHTML += commentHTML;
 }
