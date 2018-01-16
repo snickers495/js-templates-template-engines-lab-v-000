@@ -8,9 +8,9 @@ function createPost() {
   ////Template/////
   var postTemplate = document.getElementById("post-template").innerHTML;
   var postTemplateFn = _.template(postTemplate);
-  var pageTemplate = document.getElementById("post-template").innerHTML;
+  var pageTemplate = document.getElementById("page-template").innerHTML;
   var pageTemplateFn = _.template(pageTemplate);
-  
+
   var postDiv = document.getElementById("post");
   var templateHTML = templateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
   postDiv.innerHTML += templateHTML;
