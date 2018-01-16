@@ -10,6 +10,8 @@ function createPost() {
   var postTemplateFn = _.template(postTemplate);
   var pageTemplate = document.getElementById("page-template").innerHTML;
   var pageTemplateFn = _.template(pageTemplate);
+  var commentsTemplate = document.getElementById("page-template").innerHTML;
+  var pageTemplateFn = _.template(pageTemplate);
 
   var postDiv = document.getElementById("post");
   var templateHTML = templateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
