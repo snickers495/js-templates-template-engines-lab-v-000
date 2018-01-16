@@ -1,5 +1,5 @@
 function createPost() {
-  
+
     ////Blog Values///
     var postTitle = document.getElementById("postTitle").value;
     var postAuthor = document.getElementById("postAuthor").value
@@ -25,4 +25,7 @@ function createPost() {
 function postComment(){
   var commenter = document.getElementById("commenterName").value
   var comment = document.getElementById("commenterText").value
+
+  var commentTemplate = document.getElementById("comment-template").innerHTML;
+  var commentTemplateFn = _.template(commentTemplate);
 }
