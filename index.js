@@ -16,5 +16,6 @@ function createPost() {
   var main = document.getElementsByTagName("main")[0];
   main.innerHTML += pageTemplateFn();
   var postTemplateHTML = postTemplateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
+  var postDiv = postDiv = document.getElementById("post");
   postDiv.innerHTML += templateHTML;
 }
