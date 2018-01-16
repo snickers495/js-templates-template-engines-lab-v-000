@@ -18,4 +18,6 @@ function createPost() {
   var postTemplateHTML = postTemplateFn({ 'postTitle': postTitle, 'postAuthor': postAuthor; 'postText': postText });
   var postDiv = postDiv = document.getElementById("post");
   postDiv.innerHTML += postTemplateHTML;
+  var postFooter = document.querySelector('footer');
+  postFooter.innerHTML = commentsTemplateFn();
 }
