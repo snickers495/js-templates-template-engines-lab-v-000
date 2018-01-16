@@ -10,7 +10,7 @@ function createPost() {
   var postTemplateFn = _.template(postTemplate);
   var pageTemplate = document.getElementById("page-template").innerHTML;
   var pageTemplateFn = _.template(pageTemplate);
-  var commentsTemplate = document.getElementById("page-template").innerHTML;
+  var commentsTemplate = document.getElementById("comments-template").innerHTML;
   var pageTemplateFn = _.template(pageTemplate);
 
   var postDiv = document.getElementById("post");
